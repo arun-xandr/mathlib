@@ -782,7 +782,8 @@ protected lemma ext' {f₁ f₂ : filter α}
   f₁ = f₂ :=
 filter.ext h
 
-lemma eventually_of_le {f₁ f₂ : filter α} (h : f₁ ≤ f₂) {p : α → Prop} (hp : ∀ᶠ x in f₂, p x) :
+lemma eventually.filter_mono {f₁ f₂ : filter α} (h : f₁ ≤ f₂) {p : α → Prop}
+  (hp : ∀ᶠ x in f₂, p x) :
   ∀ᶠ x in f₁, p x :=
 h hp
 
